@@ -3,15 +3,14 @@
  */
 import Layout from '@/components/common/Layout'
 import AccountSettingPage from './setting/page'
-// import OrderHistoryDetailPage from './orderHistory/[slug]/page'
-// import OrderHistoryPage from './orderHistory/page'
-import MyPageAll from '@/components/myPage/MyPageAll'
+import OrderHistoryDetailPage from './orderHistory/[slug]/page'
+import OrderHistoryPage from './orderHistory/page'
 
 export default function MyPage() {
   return (
     <Layout>
       <AccountSettingPage />
-      {/* <OrderHistoryPage /> */}
+      <OrderHistoryPage />
     </Layout>
   )
 }
