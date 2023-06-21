@@ -7,6 +7,7 @@ import { RegisterEnroll, RegisterRequest } from '@/api/interface/auth'
 import { useRouter } from 'next/navigation'
 import { useSignUp } from '@/hooks/useSignUp'
 import CustomCheckbox from '../common/CustomCheckbox'
+import Swal from 'sweetalert2'
 
 export default function SignUp() {
   const { joinMutation, emailCheckMutation } = useSignUp()
@@ -14,11 +15,15 @@ export default function SignUp() {
   const {
     register,
     handleSubmit,
+    getValues,
     formState: { isDirty, errors, isValid },
   } = useForm<RegisterRequest>()
 
   // 이메일 중복확인 핸들러
-  const handlerEmailCheck = () => {}
+  const handlerEmailCheck = () => {
+    const email = getValues('email')
+    emailCheckMutation(email)
+  }
 
   // 비밀번호, 비밀번호확인 노출 토글
   const [passwordVisibility, setPasswordVisibility] = useState(false)
@@ -98,8 +103,11 @@ export default function SignUp() {
             })}
             className="focus:ring-primary-600 focus:border-primary-600 block w-[68%] rounded-sm border border-neutral-navy-300 bg-neutral-navy-950 p-2.5 text-white focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
           />
-          <button className="mx-1 flex w-[30%] items-center justify-center rounded-sm border border-primary-darkblue-hover bg-primary-darkblue-hover px-4 py-2">
-            <span className="text-xs text-white">이메일 중복확인</span>
+          <button
+            onClick={handlerEmailCheck}
+            className="mx-1 flex w-[30%] items-center justify-center rounded-sm border border-primary-darkblue-hover bg-primary-darkblue-hover px-4 py-2 text-xs text-white"
+          >
+            이메일 중복확인
           </button>
         </div>
       </div>
