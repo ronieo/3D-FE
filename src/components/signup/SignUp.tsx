@@ -171,19 +171,13 @@ export default function SignUp() {
 
       {/* 이용약관 동의 체크박스 */}
       <div className="my-[1.5rem] ml-2 flex">
-        {/* <CustomCheckbox
-            id="terms"
-            aria-describedby="terms"
-            checked={isAgreed}
-            onChange={handleTermCheck}
-          /> */}
         <input
           id="terms"
           aria-describedby="terms"
           type="checkbox"
           checked={isAgreed}
           onChange={handleTermCheck}
-          className="rounded dark:focus:ring-primary-600 h-6 w-6 border border-neutral-navy-300 bg-bg-3 accent-neutral-navy-850 dark:accent-neutral-navy-850 dark:ring-offset-gray-800"
+          className="rounded h-6 w-6 border border-neutral-navy-300 bg-neutral-navy-850 accent-primary-main"
         />
         <label htmlFor="terms" className="ml-3 text-xs dark:text-neutral-navy-100 ">
           이용약관에 동의합니다
