@@ -1,27 +1,27 @@
 'use client'
 
-import { Asset } from '@/api/interface/asset'
-import { formatPrice } from '@/utils/formatPrice'
+import { MouseEventHandler } from 'react'
 import Link from 'next/link'
+import { formatPrice } from '@/utils/formatPrice'
 
-interface Props {
-  asset: Asset
+interface OrderHistoryItemProps {
+  // asset: Asset
+  onClick?: MouseEventHandler<HTMLLIElement>
 }
 
 // export default function MyOrderHistoryItem({ asset }: Props) {
-export default function MyOrderHistoryItem() {
-  const handleOrderNumberClick = () => {
-    console.log('주문번호 클릭!')
-  }
-
+export default function MyOrderHistoryItem({ onClick }: OrderHistoryItemProps) {
   return (
     <>
-      <li className="my-4 flex h-[3.75rem] w-full justify-between border-b border-neutral-navy-300 pb-3 text-[14px] hover:cursor-pointer hover:border-b hover:border-sky-500">
+      <li
+        // onClick={handleMoveToOrderDetail}
+        className="my-4 flex h-[3.75rem] w-full justify-between border-b border-neutral-navy-300 pb-3 text-[0.8rem] hover:cursor-pointer hover:border-b hover:border-sky-500"
+      >
         <span className="ml-[0.5rem] mr-[9.8rem] pt-3">2023-06-02</span>
         <Link
           href=""
-          onClick={handleOrderNumberClick}
-          className="mr-[18rem] text-[18px] underline underline-offset-4"
+          // onClick={handleMoveToOrderDetail}
+          className="mr-[18rem] text-[1.2rem] underline underline-offset-4"
         >
           20230602-0000001
         </Link>
