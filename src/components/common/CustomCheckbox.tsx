@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { InputHTMLAttributes } from 'react'
 
 type CustomCheckboxProps = {
   id: string
   className?: string
   size?: number
+  checked?: boolean
+  onChange?: InputHTMLAttributes<HTMLInputElement>
   children?: React.ReactNode
 }
 

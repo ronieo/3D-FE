@@ -38,75 +38,23 @@ export default function AssetDetailContent({ asset }: Props) {
           </div>
         </div>
         <div className="mb-6">
-          <div className="flex h-[4.4rem] w-[100%] items-center border-t border-transparent-navy-30">
-            <h3 className="w-1/2 border-r border-transparent-navy-30">확장자</h3>
-          </div>
-          <div className="flex h-[4.4rem] w-[100%] items-center border-t border-transparent-navy-30">
-            <h3 className="w-1/2 border-r border-transparent-navy-30">평점</h3>
-            <div className="flex">
-              <Image
-                src="/icons/thumbsUp.svg"
-                alt="left"
-                width={13}
-                height={13}
-                className="ml-[1.6rem]"
-              />
-              <p className="ml-[0.4rem]">
-                {asset.rating}점({asset.reviewCount}개)
-              </p>
-            </div>
-          </div>
-          <div className="flex h-[4.4rem] w-[100%] items-center border-t border-transparent-navy-30">
-            <h3 className="w-1/2 border-r border-transparent-navy-30">방문자 수</h3>
-            <div className="flex">
-              <Image
-                src="/icons/eye.svg"
-                alt="left"
-                width={13}
-                height={13}
-                className="ml-[1.6rem]"
-              />
-              <p className="ml-[0.4rem]"></p>
-            </div>
-          </div>
-          <div className="flex h-[4.4rem] w-[100%] items-center border-t border-transparent-navy-30">
-            <h3 className="w-1/2 border-r border-transparent-navy-30">찜하기 수</h3>
-            <div className="flex">
-              <Image
-                src="/icons/heart.svg"
-                alt="left"
-                width={13}
-                height={13}
-                className="ml-[1.6rem]"
-              />
-              <p className="ml-[0.4rem]">{asset.wishCount}</p>
-            </div>
+          <div className="flex h-[4.4rem] items-center border-t border-transparent-navy-30">
+            <h3>확장자</h3>
           </div>
           <div className="flex h-[4.4rem] items-center border-t border-transparent-navy-30">
-            <h3 className="w-1/2 border-r border-transparent-navy-30">파일 크기</h3>
-            <div className="flex w-1/2">
-              <Image
-                src="/icons/file.svg"
-                alt="left"
-                width={13}
-                height={13}
-                className="ml-[1.6rem]"
-              />
-              <p className="ml-[0.4rem]"></p>
-            </div>
+            <h3>평점</h3>
+          </div>
+          <div className="flex h-[4.4rem] items-center border-t border-transparent-navy-30">
+            <h3>방문자 수</h3>
+          </div>
+          <div className="flex h-[4.4rem] items-center border-t border-transparent-navy-30">
+            <h3>찜하기 수</h3>
+          </div>
+          <div className="flex h-[4.4rem] items-center border-t border-transparent-navy-30">
+            <h3>파일 크기</h3>
           </div>
           <div className="flex h-[4.4rem] items-center border-y border-transparent-navy-30">
-            <h3 className="w-1/2 border-r border-transparent-navy-30">제작자</h3>
-            <div className="flex w-1/2">
-              <Image
-                src="/icons/user.svg"
-                alt="left"
-                width={13}
-                height={13}
-                className="ml-[1.6rem]"
-              />
-              <p className="ml-[0.4rem]">NationA</p>
-            </div>
+            <h3>제작자</h3>
           </div>
         </div>
         <div className="bg-neutral-navy-900 px-3 py-4">
