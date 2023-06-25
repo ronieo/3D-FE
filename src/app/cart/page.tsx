@@ -1,8 +1,7 @@
 import Layout from '@/components/common/Layout'
 import Cart from '@/components/cart/Cart'
 import CartInfo from '@/components/cart/CartInfo'
-import { cartList } from '@/api/service/cart'
-import { CartItemProps } from '@/api/interface/cart'
+
 
 export default async function CartPage() {
   return (

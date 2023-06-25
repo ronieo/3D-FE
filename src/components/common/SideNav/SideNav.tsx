@@ -2,12 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getAllCategories } from '@/api/service/category'
 import CategoryList from './CategoryList'
-import { Category } from '@/api/interface/category'
 import CategoryAsset from './CategoryAsset'
 
 export default async function SideNav() {
   const { data } = await getAllCategories()
-  console.log(data.categoryList)
 
   return (
     <aside
