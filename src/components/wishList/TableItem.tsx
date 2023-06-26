@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { formatPrice } from '@/utils/formatPrice'
 import CustomCheckbox from '../common/CustomCheckbox'
 import IconButton from './IconButton'
-import { CartIcon, BlueCartIcon, TrashIcon, BlueTrashIcon } from '@/components/common/icon/Icons'
+import { BlueCartIcon, BlueTrashIcon, CartIcon, TrashIcon } from '../common/icon/Icon'
 
 interface TableItemProps {
   assetId: number
