@@ -14,6 +14,7 @@ export const useLogin = () => {
     onSuccess: (data) => {
       queryClient.setQueryData(['LoginData'], data.data)
       dispatch(setUser(data.data.userId))
+      //리랜더링을 위해 헤더에서 accesTocken말고 userId로 구분하는것으로
     },
     onError: (err: AxiosError) => {
       console.log(err)
