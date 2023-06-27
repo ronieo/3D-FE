@@ -15,7 +15,8 @@ export const getUserInfo = async <T = UserResponseData>(id: number): Promise<T> 
 }
 
 //회원 탈퇴
-export const withdrawal = async ({ id, withdrawData }: WithdrawRequest) => {
+// export const withdrawal = async (params: type) => {}
+export const withdrawal = async (id: number, withdrawData: WithdrawRequest) => {
   const { message, deleteConfirm } = withdrawData
   const { data } = await axiosInstance.post(`/s/user/${id}/withdraw`, {
     message,
