@@ -16,13 +16,13 @@ export default function Cart() {
   const [selectedTotalPrice, setSelectedTotalPrice] = useState<number>(0)
   const [selectedDiscountAmount, setSelectedDiscountAmount] = useState<number>(0)
 
+  console.log(cartItems)
+
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        // const userId = useSelector((state: RootState) => state.user.userId)
-        // 확인 필요 useSelector
-        const response = await cartList(1)
+        const userId = Number(localStorage.getItem('userId'))
+        const response = await cartList(userId)
         setCartItems(response.data)
         console.log('a', response.data)
       } catch (error) {

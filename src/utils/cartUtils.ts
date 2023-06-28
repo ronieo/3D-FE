@@ -2,6 +2,8 @@ import { SetStateAction, Dispatch } from 'react'
 import { CartItemProps } from '@/api/interface/cart'
 import { cartDelete } from '@/api/service/cart'
 
+const userId = Number(localStorage.getItem('userId'))
+
 export async function deleteAllCartItems(
   cartItems: CartItemProps['item'][],
   setCartItems: Dispatch<SetStateAction<CartItemProps['item'][]>>,
@@ -9,7 +11,7 @@ export async function deleteAllCartItems(
 ): Promise<void> {
   try {
     // 모든 장바구니 아이템 삭제
-    await cartDelete({ userId: 1, carts: cartItems.map((item) => item.cartId) })
+    await cartDelete({ userId: userId, carts: cartItems.map((item) => item.cartId) })
     setCartItems([])
     setSelectedCartIds([])
   } catch (error) {
@@ -25,7 +27,7 @@ export async function deleteSelectedCartItems(
 ): Promise<void> {
   try {
     // 선택된 장바구니 아이템 삭제
-    await cartDelete({ userId: 1, carts: selectedCartIds.map(Number) })
+    await cartDelete({ userId: userId, carts: selectedCartIds.map(Number) })
     const updatedCartItems = cartItems.filter(
       (item) => !selectedCartIds.includes(item.cartId.toString()),
     )
@@ -44,7 +46,7 @@ export async function deleteSelectedCartItem(
 ): Promise<void> {
   try {
     // 카트 아이템 삭제
-    await cartDelete({ userId: 1, carts: [cartId] })
+    await cartDelete({ userId: userId, carts: [cartId] })
 
     // 카트 아이템 목록에서 삭제된 아이템을 제외하고 업데이트
     const updatedCartItems = cartItems.filter((item) => item.cartId !== cartId)
