@@ -49,7 +49,7 @@ export default function CartItem({
             <li className="flex items-center after:m-[0.8rem] after:h-[1.2rem] after:w-[0.1rem] after:bg-transparent-navy-30">
               확장자 : {item.asset.extension}
             </li>
-            <li>데이터 용량 : {item.asset.size}</li>
+            <li>데이터 용량 : {item.asset.size}KB</li>
           </ul>
         </div>
       </td>
