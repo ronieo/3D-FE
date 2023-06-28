@@ -6,10 +6,10 @@ import { store } from './store'
 
 export const orderHistoryStore = configureStore({
   reducer: {
-    drawer: drawerReducer,
+    // drawer: drawer/Reducer,
     clickedOrderHistory: clickedOrderHistoryReducer,
     user: userReducer,
   },
 })
 
-export type OrderHistoryState = ReturnType<typeof store.getState>
+export type OrderHistoryState = ReturnType<typeof orderHistoryStore.getState>
