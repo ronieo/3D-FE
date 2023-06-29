@@ -41,7 +41,7 @@ export default function Payment() {
       // 결제 성공 시
       console.log('결제 성공:', response)
       // ... 결제 성공 처리 로직 작성 ...
-      route.push('/payment/complete')
+      route.push(`/payment/complete?orderId=${response.data.orderId}`)
     } catch (error) {
       // 결제 실패 시
       console.error('결제 실패:', error)
