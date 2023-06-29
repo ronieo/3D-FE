@@ -21,10 +21,13 @@ export default function Cart() {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const userId = Number(localStorage.getItem('userId'))
-        const response = await cartList(userId)
-        setCartItems(response.data)
-        console.log('a', response.data)
+        if (typeof window !== 'undefined') {
+          // 클라이언트 측인지 확인
+          const userId = Number(localStorage.getItem('userId'))
+          const response = await cartList(userId)
+          setCartItems(response.data)
+          console.log('a', response.data)
+        }
       } catch (error) {
         console.log('Error fetching cart items:', error)
       }
