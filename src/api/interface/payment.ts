@@ -72,6 +72,7 @@ export interface OrderProductList {
   price: number
   discountPrice: number
   size: number
+  thumbnailUrl: string
 }
 
 export type OrderHistoryResponse = ApiResponse<OrderHistoryResponseData>
