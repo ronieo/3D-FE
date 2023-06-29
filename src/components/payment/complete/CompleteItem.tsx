@@ -7,7 +7,13 @@ export default function CompleteItem({ item }: { item: OrderProductList }) {
   return (
     <tr className="border-b border-transparent-navy-15">
       <td className="py-[0.8rem]">
-        <Image src="/image.svg" alt="asset" width={80} height={100} className="min-w-[8rem]" />
+        <Image
+          src={`https://asset-store-bucket.s3.ap-northeast-2.amazonaws.com/asset-store-bucket/${item.thumbnailUrl}`}
+          alt="asset"
+          width={80}
+          height={100}
+          className="min-w-[8rem]"
+        />
       </td>
       <td>
         <div className="px-[1.2rem]">
