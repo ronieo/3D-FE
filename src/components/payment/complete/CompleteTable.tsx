@@ -1,7 +1,32 @@
-import React from 'react'
+'use client'
+
+import React, { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import CompleteItem from './CompleteItem'
+import { getOrderComplete } from '@/api/service/payments'
+import { OrderProductList } from '@/api/interface/payment'
 
 export default function CompleteTable() {
+  const searchParams = useSearchParams()
+  const orderId = searchParams.get('orderId')
+  const [data, setData] = useState<OrderProductList[]>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (orderId) {
+          const response = await getOrderComplete(orderId)
+          setData(response.data.orderProductList)
+        }
+      } catch (error) {
+        console.error('구매완료 정보 실패 :', error)
+      }
+    }
+
+    fetchData()
+  }, [orderId])
+
+  console.log(data)
   return (
     <table className="mx-auto mb-[11.1rem] w-[72.077%]">
       <thead>
@@ -18,7 +43,9 @@ export default function CompleteTable() {
         </tr>
       </thead>
       <tbody>
-        <CompleteItem />
+        {data.map((item) => (
+          <CompleteItem key={item.assetId} item={item} />
+        ))}
       </tbody>
     </table>
   )
