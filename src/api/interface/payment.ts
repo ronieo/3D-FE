@@ -8,6 +8,7 @@ export interface OrderHistory {
   orderId: number
   orderNumber: string
   orderDate: string
+  paymentTool: string
   totalPrice: number
   assetCount: number
 }
@@ -19,13 +20,7 @@ export interface OrderHistoryDetail {
   price: number
   discountPrice: number
   size: number
-}
-
-export interface OrderHistoryData {
-  orderHistoryList: OrderHistory[]
-  currentPage: number
-  totalPage: number
-  totalElement: number
+  thumbnailUrl: string
 }
 
 //주문 내역
@@ -39,27 +34,11 @@ export interface OrderHistoryResponseData extends FieldValues {
 
 //주문내역 상세보기
 export interface OrderHistoryDetailResponseData extends FieldValues {
-  data: {
-    //주문한 에셋들
-    orderProductList: [
-      {
-        assetId: number
-        assetName: string
-        extension: string
-        price: number
-        discountPrice: number
-        size: number
-      },
-    ]
-    // 주문정보
-    orderDetail: {
-      orderId: number
-      orderNumber: number
-      orderDate: Date
-      totalPrice: number
-      assetCount: number
-    }
-  }
+  //주문한 에셋들
+  // orderProductList: OrderHistoryDetail[]
+  orderProductList: OrderHistoryDetail
+  // 주문정보
+  orderDetail: OrderHistory
 }
 
 export type OrderHistoryResponse = ApiResponse<OrderHistoryResponseData>
