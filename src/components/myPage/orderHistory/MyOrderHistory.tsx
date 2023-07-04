@@ -35,12 +35,12 @@ export default function MyOrderHistory() {
           }}
         />
       </div>
-      <div className="h-[70%] w-full justify-center">
-        <div className="mx-1 my-3 flex h-[2.5rem] w-full justify-between text-[1.2rem] dark:text-neutral-navy-100">
-          <span className="mr-[20rem]">주문일자</span>
-          <span className="mr-[36.2rem]">주문번호</span>
-          <span className="mr-[3.4rem]">구매한 에셋 수</span>
-          <span className="mr-[2.2rem]">결제금액</span>
+      <div className="h-[70%] w-full">
+        <div className="mx-1 my-3 flex h-[2.5rem] w-full items-end justify-between text-[1.2rem] dark:text-neutral-navy-100">
+          <span className="mr-[19rem]">주문일자</span>
+          <span className="mr-[32.2rem]">주문번호</span>
+          <span className="mr-[5.8rem]">구매한 에셋 수</span>
+          <span className="mr-[0.8rem] text-right">결제금액</span>
         </div>
         {showOrderHistory ? (
           <>
