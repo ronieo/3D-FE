@@ -73,21 +73,21 @@ export default function Header() {
             <div className="cursor-pointer p-[0.9rem]">
               <Image src="/icons/user.svg" alt="마이페이지" width={22} height={22} />
             </div>
-            <div className="absolute right-0 top-[100%] hidden pt-[1.5rem] text-center text-sl group-hover:block">
+            <div className="absolute right-0 top-[100%] hidden text-center text-sl group-hover:block">
               <ul className="w-[13.1rem] rounded-[0.4rem] bg-bg-1 p-4 text-neutral-navy-100">
                 <li className="leading-[4.4rem]">
                   <Link href="/my-page" className="text-neutral-navy-100">
-                    내 계정
+                    마이페이지
                   </Link>
                 </li>
-                <li className="leading-[4.4rem]">
+                {/* <li className="leading-[4.4rem]">
                   <OrderHistoryButton
                     setSelectedTab={function (prev: boolean): void {
                       throw new Error('Function not implemented.')
                     }}
                     selectedTab={false}
                   />
-                </li>
+                </li> */}
                 <Logout setAccessToken={setAccessToken} />
               </ul>
             </div>
