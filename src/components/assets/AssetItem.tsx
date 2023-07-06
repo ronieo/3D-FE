@@ -24,11 +24,11 @@ export default function AssetItem({ asset }: Props) {
     <li>
       <button
         onClick={handleClick}
-        className="h-[35.8rem] min-w-[22.4rem] hover:rounded-[0.4rem] hover:border-2 hover:border-primary-main
-      focus:rounded-[0.4rem] focus:border-2 focus:border-primary-main"
+        className="h-[35.8rem] min-w-[22.4rem] border-2 border-[transparent] hover:rounded-[0.4rem] hover:border
+      hover:border-primary-main focus:rounded-[0.4rem] focus:border-2 focus:border-primary-main"
       >
         <div className="h-[35rem] p-[0.4rem]">
-          <div className="flex h-[26.6rem] w-[21.6rem] items-center justify-center rounded-[0.4rem] bg-neutral-navy-100">
+          <div className="flex h-[26.6rem]  items-center justify-center rounded-[0.4rem] bg-neutral-navy-100">
             <Image
               src={
                 isCheckImage
