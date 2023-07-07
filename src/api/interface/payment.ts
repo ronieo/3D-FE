@@ -53,16 +53,7 @@ export interface OrderHistoryResponseData extends FieldValues {
 export interface OrderHistoryDetailResponseData extends FieldValues {
   data: {
     //주문한 에셋들
-    orderProductList: [
-      {
-        assetId: number
-        assetName: string
-        extension: string
-        price: number
-        discountPrice: number
-        size: number
-      },
-    ]
+    orderProductList: OrderProductList[]
     // 주문정보
     orderDetail: {
       orderId: number
@@ -72,6 +63,16 @@ export interface OrderHistoryDetailResponseData extends FieldValues {
       assetCount: number
     }
   }
+}
+
+export interface OrderProductList {
+  assetId: number
+  assetName: string
+  extension: string
+  price: number
+  discountPrice: number
+  size: number
+  thumbnailUrl: string
 }
 
 export type OrderHistoryResponse = ApiResponse<OrderHistoryResponseData>
