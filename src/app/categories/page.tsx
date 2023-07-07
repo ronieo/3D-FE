@@ -12,7 +12,7 @@ export default async function CategoriyPage() {
   return (
     <Layout>
       <div className="flex">
-        <div className="h-[100%] w-full">
+        <div className="h-full w-full">
           <CategoryAssetContainer categoryList={categoryList} />
         </div>
         <Drawer>
