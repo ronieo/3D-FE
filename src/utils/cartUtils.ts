@@ -1,10 +1,10 @@
 import { SetStateAction, Dispatch } from 'react'
 import { CartItemProps } from '@/api/interface/cart'
 import { cartDelete } from '@/api/service/cart'
-
-const userId = Number(localStorage.getItem('userId'))
+import { useUser } from '@/hooks/useUser'
 
 export async function deleteAllCartItems(
+  userId: number,
   cartItems: CartItemProps['item'][],
   setCartItems: Dispatch<SetStateAction<CartItemProps['item'][]>>,
   setSelectedCartIds: Dispatch<SetStateAction<string[]>>,
@@ -20,6 +20,7 @@ export async function deleteAllCartItems(
 }
 
 export async function deleteSelectedCartItems(
+  userId: number,
   selectedCartIds: string[],
   cartItems: CartItemProps['item'][],
   setCartItems: Dispatch<SetStateAction<CartItemProps['item'][]>>,
@@ -39,6 +40,7 @@ export async function deleteSelectedCartItems(
 }
 
 export async function deleteSelectedCartItem(
+  userId: number,
   cartId: number,
   cartItems: CartItemProps['item'][],
   setCartItems: Dispatch<SetStateAction<CartItemProps['item'][]>>,

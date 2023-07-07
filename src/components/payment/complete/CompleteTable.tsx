@@ -5,17 +5,19 @@ import { useSearchParams } from 'next/navigation'
 import CompleteItem from './CompleteItem'
 import { getOrderComplete } from '@/api/service/payments'
 import { OrderProductList } from '@/api/interface/payment'
+import { useUser } from '@/hooks/useUser'
 
 export default function CompleteTable() {
   const searchParams = useSearchParams()
   const orderId = searchParams.get('orderId')
   const [data, setData] = useState<OrderProductList[]>([])
+  const { userId } = useUser()
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         if (orderId) {
-          const response = await getOrderComplete(orderId)
+          const response = await getOrderComplete(userId, orderId)
           setData(response.data.orderProductList)
         }
       } catch (error) {
@@ -24,7 +26,7 @@ export default function CompleteTable() {
     }
 
     fetchData()
-  }, [orderId])
+  }, [userId, orderId])
 
   console.log(data)
   return (
