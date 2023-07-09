@@ -7,7 +7,7 @@ import { OrderHistory, OrderHistoryDetailResponse } from '@/api/interface/paymen
 
 interface OrderHistoryProps {
   orderHistories: OrderHistory[] | undefined
-  detailInfo: OrderHistoryDetailResponse
+  detailInfo: OrderHistoryDetailResponse | undefined
 }
 
 export default function MyOrderHistoryList({ orderHistories, detailInfo }: OrderHistoryProps) {

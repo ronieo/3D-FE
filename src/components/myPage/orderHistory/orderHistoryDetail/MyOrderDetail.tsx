@@ -20,7 +20,7 @@ export default function MyOrderDetail({ detailInfo }: OrderHistoryDetailProps) {
   const { orderHistoryDetail } = useOrderHistoryDetail(orderHistoryId)
 
   if (!orderHistoryId || !detailInfo) {
-    return <Loading />
+    return
   }
 
   return (

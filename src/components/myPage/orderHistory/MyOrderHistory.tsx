@@ -2,19 +2,48 @@
  * 마이페이지-주문내역
  */
 'use client'
-import { SetStateAction, useState } from 'react'
+import { SetStateAction, useEffect, useState } from 'react'
 import MyOrderCalendar from './calendar/MyOrderCalendar'
 import MyOrderHistoryList from './MyOrderHistoryList'
 import PaginationButton from '@/components/common/PaginationButton'
 import { useGetOrderHistories } from '@/hooks/useMyPage'
+import { OrderHistoryDetailResponse } from '@/api/interface/payment'
+import { getMyPageOrderHistoryDetail, getOrderHistory, getUserInfo } from '@/api/service/myPage'
+import error from 'next/error'
 
 export default function MyOrderHistory() {
   const [getStartDate, setGetStartDate] = useState<Date | null>(null)
   const [getEndDate, setGetEndDate] = useState<Date | null>(null)
-  const [activePage, setActivePage] = useState(0)
   const [showOrderHistory, setShowOrderHistory] = useState(true)
-
+  const [activePage, setActivePage] = useState<number>(0)
   const { orderHistories } = useGetOrderHistories()
+  const [detailInfo, setDetailInfo] = useState<OrderHistoryDetailResponse | null | undefined>(null)
+  // const [detailInfo, setDetailInfo] = useState<OrderHistoryDetailResponse>(initialDetailInfo)
+
+  useEffect(() => {
+    const fetchDetailInfo = async () => {
+      try {
+        // id 값을 가져오는 비동기 함수 호출
+        const userIdResponse = await getUserInfo()
+        const id = userIdResponse.data?.id
+
+        // orderId 값을 가져오는 비동기 함수 호출
+        const orderIdResponse = await getOrderHistory(activePage)
+        const orderId = orderIdResponse.data.orderId
+
+        if (id && orderId) {
+          const detailInfoResponse = await getMyPageOrderHistoryDetail(id, orderId)
+          setDetailInfo(detailInfoResponse)
+        } else {
+          console.log(error)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    fetchDetailInfo()
+  }, [activePage])
 
   return (
     <section className="flex w-[97%] flex-col">
@@ -44,7 +73,10 @@ export default function MyOrderHistory() {
         </div>
         {showOrderHistory ? (
           <>
-            <MyOrderHistoryList orderHistories={orderHistories?.data.orderList} />
+            <MyOrderHistoryList
+              orderHistories={orderHistories?.data.orderList}
+              detailInfo={undefined}
+            />
             <PaginationButton
               activePage={activePage}
               setActivePage={setActivePage}

@@ -11,7 +11,7 @@ import MyOrderDetail from './orderHistoryDetail/MyOrderDetail'
 
 interface MyOrderHistoryItemProps {
   orderHistory: OrderHistory
-  detailInfo: OrderHistoryDetailResponse
+  detailInfo: OrderHistoryDetailResponse | undefined
 }
 export default function MyOrderHistoryItem({ orderHistory, detailInfo }: MyOrderHistoryItemProps) {
   const [showItemDetail, setShowItemDetail] = useState(false)

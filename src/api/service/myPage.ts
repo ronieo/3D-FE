@@ -3,9 +3,13 @@
  */
 
 import { axiosInstance } from '../axios'
-import { User, UserId, UserResponseData } from '../interface/auth'
+import { UserResponseData } from '../interface/auth'
 import { WithdrawRequest } from '../interface/myPage'
-import { OrderHistoryResponse, OrderHistoryResponseData } from '../interface/payment'
+import {
+  OrderHistoryDetailResponse,
+  OrderHistoryResponse,
+  OrderHistoryResponseData,
+} from '../interface/payment'
 
 //유저정보조회
 // export const getUserInfo = async (id: number): Promise<UserResponseData> => {
@@ -15,7 +19,6 @@ export const getUserInfo = async <T = UserResponseData>(): Promise<T> => {
 }
 
 //회원 탈퇴
-// export const withdrawal = async (params: type) => {}
 export const withdrawal = async (id: number, withdrawData: WithdrawRequest) => {
   const { message, deleteConfirm } = withdrawData
   const { data } = await axiosInstance.post(`/s/user/${id}/withdraw`, {
@@ -25,9 +28,14 @@ export const withdrawal = async (id: number, withdrawData: WithdrawRequest) => {
   return data
 }
 
+export const getOrderHistory = async <T = OrderHistoryResponse>(page: number): Promise<T> => {
+  const res = await axiosInstance.get<T>(`/assets?page=${page}`)
+  return res.data
+}
+
 // 주문내역 - 달력 필터링에도 사용가능할지도
 export const getMyPageOrderHistory = async <T = OrderHistoryResponse>(
-  id: string | null,
+  id: number,
   startDate: Date,
   endDate: Date,
 ): Promise<T> => {
@@ -48,7 +56,10 @@ export const getMyPageOrderHistory = async <T = OrderHistoryResponse>(
 }
 
 // 주문상세내역
-export const getMyPageOrderHistoryDetail = async (id: string | null, orderId: number) => {
-  const { data } = await axiosInstance.get(`/s/user/${id}/orders/${orderId}`)
-  return data
+export const getMyPageOrderHistoryDetail = async <T = OrderHistoryDetailResponse>(
+  id: number,
+  orderId: number,
+): Promise<T> => {
+  const res = await axiosInstance.get(`/s/user/${id}/orders/${orderId}`)
+  return res.data
 }

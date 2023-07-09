@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import {
   getMyPageOrderHistory,
   getMyPageOrderHistoryDetail,
+  getOrderHistory,
   getUserInfo,
   withdrawal,
 } from '@/api/service/myPage'
@@ -12,10 +13,12 @@ import { WithdrawRequest, WithdrawResponse } from '@/api/interface/myPage'
 import { AxiosError } from 'axios'
 import Swal from 'sweetalert2'
 import { removeCookie } from '@/utils/token'
+import { data } from 'autoprefixer'
 import { endOfDay, startOfDay, subDays } from 'date-fns'
+import { useUser } from './useUser'
 
 export const useGetUserInfo = () => {
-  const userId = useSelector((state: RootState) => state.user.userId)
+  const { userId } = useUser()
   const { data: myUser, refetch } = useQuery({
     queryKey: ['myUser', userId],
     queryFn: () => getUserInfo(),
@@ -70,10 +73,10 @@ export const useWithdrawal = () => {
 }
 
 export const useGetOrderHistories = () => {
-  const userId = localStorage.getItem('userId')
-  //오늘 부터 이전 7일 기준으로 출력
+  const { userId } = useUser()
+  //오늘 부터 한 달 이전 기준으로 출력
   const today = new Date()
-  const startDate = startOfDay(subDays(today, 7))
+  const startDate = startOfDay(subDays(today, 30))
   const endDate = endOfDay(today)
 
   const { data: orderHistories } = useQuery({
@@ -86,7 +89,7 @@ export const useGetOrderHistories = () => {
 }
 
 export const useOrderHistoryDetail = (oderId: number) => {
-  const userId = localStorage.getItem('userId')
+  const { userId } = useUser()
   const { data: orderHistoryDetail } = useQuery({
     queryKey: ['orderHistoryDetail', userId, oderId],
     queryFn: () => getMyPageOrderHistoryDetail(userId, oderId),
