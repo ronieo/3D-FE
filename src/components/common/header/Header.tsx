@@ -26,20 +26,18 @@ export default function Header() {
     }
   }, [userId])
 
-  const { refetch } = useQuery(
-    ['cartCount', userId],
-    () => (userId !== undefined ? cartCount(userId) : Promise.resolve(0)),
-    {
-      enabled: userId !== undefined,
-      onSuccess: (data) => {
-        dispatch(setItemCount(data))
-      },
+  const { refetch } = useQuery(['cartCount', userId], () => cartCount(userId), {
+    enabled: !!userId,
+    onSuccess: (data) => {
+      dispatch(setItemCount(data))
     },
-  )
+  })
 
   useEffect(() => {
-    refetch()
-  }, [accessToken, refetch])
+    if (userId && accessToken) {
+      refetch()
+    }
+  }, [userId, accessToken, refetch])
 
   return (
     <header className="fixed z-10 flex h-[7.2rem] w-[calc(100%-24.4rem)] items-center justify-between border-b border-solid border-transparent-navy-30 bg-bg-1 px-[2.3rem] py-[1.1rem]">
