@@ -12,7 +12,7 @@
 
 #### 🔗 배포 사이트
 
-- [🦾 3D 자산거래 이커머스 🦾](https://www.moneybridge.co.kr/)
+- [🦾 3D 자산거래 이커머스 🦾](neuroid-asset.vercel.app/)
 
 ## 👥 팀원 소개
 | 이로운(팀장)                                                                                        | 이찬영(팀원)                                                                                 | 송지윤(팀원)                                                                                                                                                                                                                                        |
