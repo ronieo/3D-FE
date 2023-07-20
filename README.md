@@ -34,4 +34,90 @@
 ```
 Neuroid-asset-FE
 ├─ next.config.js
-├─ package-lock볼 수 있습니다.</p>|
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.js
+├─ public
+│  └─ background
+│  └─ icons
+│  └─ img
+│  └─ globalImages
+├─ README.md
+├─ src
+│  ├─ api
+│  │  └─ interface
+│  │  └─ service
+│  ├─ app
+│  │  └─ cart
+│  │  └─ categories
+│  │  └─ login
+│  │  └─ my-assets
+│  │  └─ my-page
+│  │  └─ payment
+│  │  └─ signup
+│  │  └─ wishlist
+│  │  └─ layout.tsx
+│  │  └─ loading.tsx
+│  │  └─ page.tsx
+│  ├─ components
+│  │  └─ assetDetail
+│  │  └─ assets
+│  │  └─ cart
+│  │  └─ category
+│  │  └─ common
+│  │  └─ login
+│  │  └─ logout
+│  │  └─ myAsset
+│  │  └─ myPage
+│  │  └─ payment
+│  │  └─ signup
+│  │  └─ wishlist
+│  ├─ data
+│  ├─ hooks
+│  ├─ store
+│  ├─ styles
+│  │  └─ globals.css
+│  └─ utils
+├─ tailwind.config.js
+├─ tsconfig.json
+└─ yarn.lock
+```
+<br />
+<!--
+## 🖥 프로젝트 미리보기
+
+|**로그인**|**회원가입**|
+| --- | --- |
+|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center"> 로그인 후 서비스 이용이 가능합니다. </p>|<p align="center">이메일 인증 후 모든 입력폼에서 유효성검사를 진행 후 </br> 로그인 페이지로 렌더링 됩니다.</p>|
+
+
+|**메인페이지**|**카테고리**|
+| --- | --- |
+|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center">로그인 여부에 상관 없이 모든 에셋을 출력합니다.</p>|<p align="center">카테고리에 따라 분류된 에셋을 출력하고, </br> 더보기를 클릭 해 </br> 태그에 해당하는 에셋만 출력됩니다</p>|
+
+
+|**에셋리뷰**|**에셋별점**|
+| --- | --- |
+|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center">에셋 클릭 시, 타 유저 리뷰를 볼 수 있고 </br> 구매한 에셋에 따라 리뷰 작성 가능합니다.</p>|<p align="center">구매한 에셋에 대한 별점 책정 및 수정이 가능합니다. </p>|
+
+
+|**장바구니**|**위시리스트**|
+| --- | --- |
+|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center">구매하려는 에셋을 담거나 삭제 할 수 있고</br> 전체 구매 또는 선택 구매가 가능합니다.</p>|<p align="center">위시리스트에 에셋을 담거나 삭제 할 수 있고</br> 장바구니에 담을수도 있습니다.</p>|
+
+
+|**결제하기**|**결제완료**|
+| --- | --- |
+|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center">결제를 희망하는 에셋을 담고 </br> 결제수단을 선택해 결제가 가능합니다. </br> 현재는 카카오페이만 가능합니다. </p>|<p align="center">결제완료한 에셋을 리스트로 출력하고 </br> 결제 내역에 대한 정보를 보여줍니다.</br> 완료페이지에서 메인페이지 또는 </br> 주문내역 페이지로 리랜더링 선택이 가능합니다.</p>|
+
+
+|**내에셋**|**마이페이지**|
+| --- | --- |
+|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|<p align="center"><img src="" width="" height="" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center">구매한 에셋을 다운받는 페이지 입니다. </br> 전체다운로드 또는 체크 버튼을 사용해 선택 다운로드가 가능하고 </br> 확장자는 .fbx 또는 .zip입니다.</p>|<p align="center">계정정보 또는 주문내역을 확인하는 페이지입니다.</br>계정정보에서 비밀번호 변경이 가능하고 </br> 주문상세내역을 확인할 수 있습니다.</p>|
+-->
