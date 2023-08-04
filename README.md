@@ -12,7 +12,7 @@
 
 #### 🔗 배포 사이트
 현재 LoadError발생으로 수정중에 있습니다.
-[🦾 뉴로이드에셋 시연영상 보러가 🦾](https://ronieo.notion.site/Neuroid-Asset-0b4138c0d21747b3a2425f383fde321b)
+[🦾 뉴로이드에셋 시연영상 보러가기 🦾](https://ronieo.notion.site/Neuroid-Asset-0b4138c0d21747b3a2425f383fde321b)
 <!--- [🦾 3D 자산거래 이커머스 🦾](https://neuroid-asset.netlify.app/)-->
 
 ## 👥 팀원 소개
