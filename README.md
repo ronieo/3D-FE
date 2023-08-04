@@ -11,8 +11,8 @@
 <br/>
 
 #### 🔗 배포 사이트
-
-- [🦾 3D 자산거래 이커머스 🦾](https://neuroid-asset.netlify.app/)
+현재 LoadError발생으로 수정중에 있습니다.
+<!--- [🦾 3D 자산거래 이커머스 🦾](https://neuroid-asset.netlify.app/)-->
 
 ## 👥 팀원 소개
 | 이로운(팀장)                                                                                        | 이찬영(팀원)                                                                                 | 송지윤(팀원)                                                                                                                                                                                                                                        |
