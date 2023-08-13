@@ -96,7 +96,7 @@ Neuroid-asset-FE
 |**메인페이지**|**카테고리**|**에셋리뷰 및 별점**|
 | --- | --- | --- |
 |<p align="center"><img src="https://github.com/3DAsset-eCommerce/3D-FE/assets/76941552/139b32f6-882c-4d4a-9226-5e6e51641c1b" width="85%" height="70%" style="object-fit: cover; object-position: center;"></p>|<p align="center"><img src="https://github.com/3DAsset-eCommerce/3D-FE/assets/76941552/026982bc-283c-49e8-a6ac-59d7a6a86a86" width="85%" height="70%" style="object-fit: cover; object-position: center;"></p>|<p align="center"><img src="https://github.com/3DAsset-eCommerce/3D-FE/assets/76941552/33d4aff6-2214-40a7-a62a-95f47b52fb15" width="85%" height="70%" style="object-fit: cover; object-position: center;"></p>|
-|<p align="center">로그인 여부에 상관 없이 모든 에셋을 출력합니다.</p>|<p align="center">카테고리에 따라 분류된 에셋을 출력하고, </br> 더보기를 클릭 해 </br> 태그에 해당하는 에셋만 출력됩니다</p>||<p align="center">에셋 클릭 시, 타 유저 리뷰를 볼 수 있고 </br> 구매한 에셋에 따라 리뷰 작성 가능합니다.</p>|
+|<p align="center">로그인 여부에 상관 없이 모든 에셋을 출력합니다.</p>|<p align="center">카테고리에 따라 분류된 에셋을 출력하고, </br> 더보기를 클릭 해 </br> 태그에 해당하는 에셋만 출력됩니다</p>|<p align="center">에셋 클릭 시, 타 유저 리뷰를 볼 수 있고 </br> 구매한 에셋에 따라 리뷰 작성 가능합니다.</p>|
 
 
 |**결제하기**|**결제완료**|
